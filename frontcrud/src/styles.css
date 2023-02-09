@@ -1,0 +1,234 @@
+/* You can add global styles to this file, and also import other style files */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+footer,
+header{
+    background-color: rgb(2, 32, 36);
+    padding: 1rem;
+    color: white;
+    
+}
+footer{
+    min-height: 5rem;
+}
+.brand{
+    width: 40%;
+    font-weight: bold;
+}
+.nav{
+    width: 60%;
+}
+.nav div{
+    margin-right: 1rem;
+}
+.container{
+    max-width: 1080px;
+    padding: 1rem;
+}
+.pointer:hover{
+    cursor: pointer;
+}
+.relative {
+    position: relative;
+}
+/* flex */
+.hide{
+    display: none;
+}
+.flex {
+    display: flex;
+}
+.wrap {
+    flex-wrap: wrap;
+}
+.column{
+    flex-direction: column;
+}
+.center {
+    justify-content: center;
+    align-items: center;
+}
+
+.space-around{
+    justify-content: space-around;
+}
+.space-between{
+    justify-content: space-between;
+}
+.flex-right{
+    flex-direction: row-reverse;
+}
+
+/* screen */
+.w-full{
+    width: 100%;
+}
+.w-half{
+    width: 50%;
+}
+/* spacing */
+.auto{
+    margin: auto;
+}
+.my-2{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.mt-5{
+    margin-top: 5rem;
+}
+
+.mr-5{
+    margin-right: 5rem;
+}
+/* button */
+.btn{
+    padding: 5px 1rem;
+    border: .2px;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+.btn:hover{
+    cursor: pointer;
+}
+
+.btn-success{
+    background-color: #97fa97c2;
+}
+.btn-success:hover{
+    box-shadow: 1px 1px 2px 2px #0F0;
+}
+
+.btn-danger{
+    background-color: #de4a4ac2;
+}
+
+.btn-danger:hover{
+    box-shadow: 1px 1px 2px 2px #F00;
+}
+
+.btn-primary{
+    background-color: #0d73e9c2;
+}
+
+.btn-primary:hover{
+    box-shadow: 1px 1px 2px 2px rgb(44, 124, 245);
+}
+
+/* text */
+.text-center{
+    text-align: center;
+}
+.text-gray{
+    color: #bbb;
+}
+/* card */
+.card{
+    border: .5px solid #ccc;
+    padding: 5px;
+    margin: .5rem;
+    min-width: 200px;
+    max-width: 280px;
+    border-radius: 5px;
+}
+.card-title{
+    font-weight: 700;
+    margin-bottom: .5rem;
+}
+.cars{
+    min-height: 90vh;
+}
+.mh-45{
+    min-height: 45vh;
+}
+.card-img{
+    width: 100%;
+}
+.card-img img{
+    min-width: 80%;
+    height: 200px;
+}
+.card-subtitle{
+    padding: .2rem .5rem;
+    font-size: .75rem;
+}
+
+.card-large-subtitle{
+    margin: .5rem 0;
+}
+/* bg */
+.bg-light{
+    background-color: aliceblue;
+    color:  #000e00;
+}
+
+
+/* form */
+.form-centent{
+    width: 100%;
+}
+
+.form-centent>div{
+    margin: 1rem auto;
+}
+
+label input{
+    padding: .3rem;
+}
+
+label{
+    color: #4f514f;
+    margin-right: 1rem;
+}
+input{
+    padding: .5rem;
+    border: .1px solid #ccc;
+    border-radius: 5px;
+    width: 80%;
+}
+.img-form .img-view{
+    border: .1px #ccc solid;
+    border-radius: 5px;
+    height: 200px;
+    width: 300px;
+} 
+.img-view img{
+    width: 100%;
+    height: 200px;
+}
+.form-submit button{
+    width: 40%;
+    padding: 1rem 0;
+}
+
+/* alert */
+.danger{
+    background-color: #ff00041f;
+    color: #F00;
+    padding: .2rem;
+}
+
+.img-large-card img{
+    max-width: 400px;
+    border-radius: 5px;
+}
+
+
+.rounded{
+    border-radius: 50%;
+    border: .1px solid #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 .2rem;
+    font-size: .75rem;
+}

@@ -1,0 +1,166 @@
+<form
+    *ngIf="car"
+    (ngSubmit)="onSubmit()"
+    #carForm="ngForm"
+    method="post"
+    action="localhost:8080/cars"
+>
+    <div class="mh-45 img-form  flex column center my-2">
+        <div 
+            class="img-view flex center pointer"
+            (click)="loadFile()"    
+        >
+            <span 
+                class="{{'add text-gray'+(car.picture===''?'':' hide')}}"
+            >
+                + image
+            </span>
+            <input 
+                type="file" 
+                name="picture" 
+                id="picture" 
+                accept="image/*" 
+                hidden 
+                required
+            >
+            <img 
+                class="{{car.picture===''?'img-dest hide':'img-dest'}}" 
+                id="img-dest"
+                src="{{car.picture?'/assets/Images/'+car.picture:''}}"
+                alt="{{car | getCarName}}"
+            >
+        </div>
+    </div>
+
+    <div class="form-centent flex column center w-full relative">
+        <div class="relative w-half">
+            <div class="flex space-around ">
+                <label for="brand">Brand</label>
+                <input 
+                    type="text" 
+                    name="brand" 
+                    id="brand" 
+                    placeholder="Ex: Mercedess" 
+                    required
+                    pattern="^[a-zA-Z0-9àéèç]{1,30}$"
+                    [(ngModel)]="car.brand"
+                    #brand="ngModel"    
+                >
+                
+            </div>
+
+            <div 
+                [hidden]="brand.valid || brand.pristine"
+                class="danger text-center"
+            >
+                the brand is required (1-25)
+            </div>
+        </div>
+
+        <div class="relative w-half">
+            <div class="flex space-around ">
+                <label for="model">Model</label>
+                <input 
+                    type="text" 
+                    name="model" 
+                    id="model" 
+                    placeholder="Ex: Gs5" 
+                    required
+                    pattern="^[a-zA-Z0-9àéèç]{1,30}$"
+                    [(ngModel)]="car.model"
+                    #model="ngModel"    
+                >
+                
+            </div>
+
+            <div 
+                [hidden]="model.valid || model.pristine"
+                class="danger text-center"
+            >
+                the model is required (1-25)
+            </div>
+        </div>
+
+        <div class="relative w-half">
+            <div class="flex space-around ">
+                <label for="ch">ch</label>
+                <input 
+                    type="number" 
+                    name="ch" 
+                    id="ch" 
+                    placeholder="Ex: 750" 
+                    required
+                    [(ngModel)]="car.ch"
+                    #ch="ngModel"    
+                >
+                
+            </div>
+
+            <div 
+                [hidden]="ch.valid || ch.pristine"
+                class="danger text-center"
+            >
+                the performance ch is required
+            </div>
+        </div>
+
+        <div class="relative w-half">
+            <div class="flex space-around ">
+                <label for="createdAt">year</label>
+                <input 
+                    type="number" 
+                    name="createdAt" 
+                    id="createdAt" 
+                    placeholder="Ex: 750" 
+                    required
+                    pattern="^[0-9]{4}$"
+                    [(ngModel)]="car.createdAt"
+                    #createdAt="ngModel"    
+                >
+                
+            </div>
+
+            <div 
+                [hidden]="createdAt.valid || createdAt.pristine"
+                class="danger text-center"
+            >
+                year must have 4 digit
+            </div>
+        </div>
+        <div>
+            <label for="colors">colors</label>
+            <div class="flex wrap">
+                <div 
+                    *ngFor="let color of ['blue', 'red','black', 'white', 'pink', 'cyan']"
+                    class="flex"
+                >
+                    <label 
+                        style="background-color: {{color}}; padding: 1rem;"
+                        class="rounded"
+                    >
+                        <input 
+                            type="checkbox" 
+                            [name]="color" 
+                            [id]="color"
+                            [value]="color"
+                            (change)="selectColor($event, color)"
+                        >
+                    
+                    </label>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="form-submit flex center">
+        <button 
+            type="submit" 
+            class="btn btn-primary"
+            [disabled]="!carForm.form.valid"
+        >
+            Save
+        </button>
+    </div>
+
+</form>

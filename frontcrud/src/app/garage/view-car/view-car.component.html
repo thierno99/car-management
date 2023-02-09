@@ -1,0 +1,40 @@
+<div class="cars">
+    <div
+        *ngIf="car"
+        class="view-car"
+    >
+        <h1 class="text-center">{{car | getCarName}}</h1>
+
+        <div class="flex center my-2 img-large-card">
+            <img src="/assets/Images/{{car.picture}}" [alt]="car | getCarName">
+        </div>
+        <div 
+            class="flex column center"
+        >
+            <div class="card-large-subtitle">
+                <strong>Brand: </strong> {{ car.brand}}
+            </div>
+
+            <div class="card-large-subtitle">
+                <strong>Model:</strong> {{ car.model}}
+            </div>
+            <div class="card-large-subtitle">
+                <strong>year:</strong> {{ car.createdAt}}
+            </div>
+
+            <div class="card-large-subtitle">
+                <strong>ch:</strong> {{ car.ch}}
+            </div>
+        </div>
+
+        <div class="flex center">
+            <button 
+                type="button" 
+                class="btn btn-primary flex center"
+                (click)="goHome()"
+            >
+                <span>&lt;</span> <span>--back</span>
+            </button>
+        </div>
+    </div>
+</div>

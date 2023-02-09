@@ -1,0 +1,33 @@
+<header>
+  <nav class="flex space-between">
+    <div 
+      class="brand pointer"
+      (click)="goHome()"
+    >
+      CarPerformance
+    </div>
+
+    <div class="flex nav">
+      <div 
+        class=" pointer"
+        (click)="goHome()"
+      >
+        Home
+      </div>
+      
+      <div 
+        class=" pointer flex center"
+        (click)="goAddcar()"
+      >
+        <span class="rounded bg-light">+</span>car
+      </div>
+    </div>
+  </nav>
+</header>
+<router-outlet></router-outlet>
+
+<footer>
+  <div class="text-center">
+    learn full-stack java
+  </div>
+</footer>

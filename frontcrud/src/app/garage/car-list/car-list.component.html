@@ -1,0 +1,65 @@
+<div class="cars container auto relative">
+    <h1 class="text-center">
+        cars Perform
+    </h1>
+    <div 
+        *ngIf="cars && cars.length"
+        class="auto flex wrap center"
+    >
+        <div 
+            *ngFor="let car of cars"
+            class="card pointer"
+            (click)="goToViewCar(car)"
+        >
+          <div class="card-head">
+            <div class="card-img flex center">
+                <img src="/assets/Images/{{car.picture}}">
+            </div>
+          </div>
+      
+          <div class="card-body relative">
+                <div class="card-text relative">
+                    <div class="card-title text-center">
+                        {{ car | getCarName}}
+                    </div>
+                    <div class="card-subtitle">
+                        <strong>Brand: </strong> {{ car.brand}}
+                    </div>
+
+                    <div class="card-subtitle">
+                        <strong>Model:</strong> {{ car.model}}
+                    </div>
+                    <div class="card-subtitle">
+                        <strong>year:</strong> {{ car.createdAt}}
+                    </div>
+
+                    <div class="card-subtitle">
+                        <strong>ch:</strong> {{ car.ch}}
+                    </div>
+
+                    <!-- <div 
+                        class="card-subtitle"
+                        *ngIf="car.colors"
+                    >
+                        <strong>Color:</strong> {{ car.colors.join(',')}}
+                    </div> -->
+                
+                </div>
+          </div>
+          <div class="card-foot flex space-between">
+            <button 
+                class="btn btn-primary"
+                (click)="editCar(car)"
+            >
+                edit
+            </button>
+            <button 
+                class="btn btn-danger"
+                (click)="deleteCarById(car)"    
+            >
+                delete
+            </button>
+          </div>
+        </div>
+    </div>
+  </div>
